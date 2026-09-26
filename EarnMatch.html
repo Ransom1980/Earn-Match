@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EarnMatch — Find Your Next Income Opportunity</title>
+<meta name="description" content="Answer a few questions and get income opportunities matched to your time, skills, and resources.">
+<style>
+:root{--ink:#111827;--muted:#64748b;--bg:#f8fafc;--card:#fff;--line:#e2e8f0;--accent:#111827;--accent2:#334155;--good:#166534}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--ink)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px max(20px,calc((100% - 1080px)/2));background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.logo{font-weight:900;font-size:22px}.logo span{font-weight:500}
+.navbtn{border:0;background:var(--accent);color:white;border-radius:12px;padding:10px 14px;font-weight:800}
+.hero{max-width:1080px;margin:auto;padding:58px 20px 35px;text-align:center}
+.badge{display:inline-block;padding:7px 11px;border:1px solid var(--line);border-radius:999px;background:white;color:var(--muted);font-size:13px;font-weight:800}
+h1{font-size:clamp(38px,8vw,70px);line-height:.98;margin:18px 0 16px;letter-spacing:-3px}
+.hero p{max-width:680px;margin:0 auto;color:var(--muted);font-size:18px;line-height:1.55}
+.cta{display:inline-block;margin-top:25px;background:var(--accent);color:#fff;text-decoration:none;padding:15px 21px;border-radius:14px;font-weight:900}
+section{max-width:1080px;margin:auto;padding:30px 20px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.card h3{margin:8px 0}.card p{color:var(--muted);line-height:1.5;margin-bottom:0}
+.quiz{max-width:720px;margin:10px auto;background:#fff;border:1px solid var(--line);border-radius:22px;padding:24px}
+.progress{height:8px;background:#e5e7eb;border-radius:99px;overflow:hidden;margin-bottom:24px}.bar{height:100%;width:20%;background:#111827}
+.q{font-size:25px;font-weight:900;margin:10px 0 18px}.choices{display:grid;gap:10px}
+.choice{width:100%;padding:15px;border:1px solid var(--line);background:#fff;border-radius:13px;text-align:left;font-weight:750;font-size:15px}
+.choice:hover{border-color:#111827}.hidden{display:none}
+.result{margin-top:20px}.match{border:1px solid var(--line);border-radius:15px;padding:16px;margin:10px 0;background:#fafafa}.match b{display:block;margin-bottom:5px}.pill{display:inline-block;font-size:12px;font-weight:800;padding:5px 8px;border-radius:999px;background:#e2e8f0;margin:3px 4px 0 0}
+.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.price{background:white;border:1px solid var(--line);border-radius:18px;padding:22px}.price.featured{border:2px solid #111827}.price h3{margin:0 0 8px}.amount{font-size:32px;font-weight:900}.price ul{padding-left:20px;color:var(--muted);line-height:1.8}.buy{display:block;text-align:center;text-decoration:none;background:#111827;color:#fff;padding:12px;border-radius:12px;font-weight:900;margin-top:15px}
+.note{font-size:13px;color:var(--muted);line-height:1.5}.adbox{border:1px dashed #cbd5e1;border-radius:18px;padding:24px;text-align:center;background:white}
+footer{padding:35px 20px;text-align:center;color:var(--muted);font-size:13px}
+@media(max-width:760px){.grid,.pricing{grid-template-columns:1fr}nav{padding:14px 16px}.hero{padding-top:42px}h1{letter-spacing:-2px}.quiz{padding:18px}}
+</style>
+</head>
+<body>
+<nav><div class="logo">Earn<span>Match</span></div><button class="navbtn" onclick="document.getElementById('quiz').scrollIntoView({behavior:'smooth'})">Find My Matches</button></nav>
+
+<header class="hero">
+<div class="badge">FREE • ONLINE • PERSONALIZED</div>
+<h1>Find income opportunities that fit your life.</h1>
+<p>Tell us what you have, what you can do, and how much time you have. EarnMatch turns that into a practical list of ways to make money online or on your schedule.</p>
+<a class="cta" href="#quiz">Get My Free Matches →</a>
+</header>
+
+<section>
+<div class="grid">
+<div class="card"><div>🎯</div><h3>Matched to you</h3><p>No giant list to sort through. Start with opportunities based on your answers.</p></div>
+<div class="card"><div>💻</div><h3>Online-first</h3><p>Filter for remote, freelance, digital, and home-based opportunities.</p></div>
+<div class="card"><div>🔔</div><h3>Keep finding</h3><p>Paid members can receive new opportunity alerts and saved plans as the product grows.</p></div>
+</div>
+</section>
+
+<section id="quiz">
+<div class="quiz">
+<div class="progress"><div id="bar" class="bar"></div></div>
+<div id="question"></div>
+<div id="result" class="result hidden"></div>
+</div>
+</section>
+
+<section>
+<div class="adbox">
+<h2>Want opportunities picked for you?</h2>
+<p class="note">Join the waitlist now. Paid memberships will unlock unlimited matches, saved opportunities, alerts, and personalized action plans.</p>
+<a class="cta" href="mailto:REPLACE_WITH_YOUR_EMAIL?subject=EarnMatch%20Waitlist">Join the Free Waitlist</a>
+</div>
+</section>
+
+<section id="pricing">
+<h2 style="text-align:center">Simple membership</h2>
+<p class="note" style="text-align:center">Replace the checkout links below with your Stripe Payment Links before launch.</p>
+<div class="pricing">
+<div class="price"><h3>Free</h3><div class="amount">$0</div><ul><li>Starter matches</li><li>Income calculator</li><li>Basic opportunity categories</li></ul><a class="buy" href="#quiz">Start Free</a></div>
+<div class="price featured"><h3>Plus</h3><div class="amount">$9.99<span style="font-size:14px">/mo</span></div><ul><li>Unlimited matches</li><li>Save opportunities</li><li>New opportunity alerts</li><li>Personalized action plans</li></ul><a class="buy" href="REPLACE_WITH_STRIPE_PLUS_LINK">Join Plus</a></div>
+<div class="price"><h3>Pro</h3><div class="amount">$19.99<span style="font-size:14px">/mo</span></div><ul><li>Everything in Plus</li><li>Weekly opportunity digest</li><li>Higher-income filters</li><li>Resume/profile tools</li></ul><a class="buy" href="REPLACE_WITH_STRIPE_PRO_LINK">Join Pro</a></div>
+</div>
+</section>
+
+<footer>EarnMatch is an informational opportunity-discovery service. It does not guarantee income, employment, or business results. Always verify an opportunity before paying money or sharing personal information.</footer>
+
+<script>
+const questions=[
+{q:"How much time can you give this each week?",a:["1–5 hours","5–10 hours","10–20 hours","20+ hours"]},
+{q:"What do you want most right now?",a:["Extra cash","A side income","A full-time income","Build a business"]},
+{q:"Which best describes your work style?",a:["Online only","Mostly online","Local + online","Either is fine"]},
+{q:"What do you already have?",a:["Phone only","Phone + computer","Car","Business/technical skills"]},
+{q:"How soon do you want to start?",a:["Today","This week","This month","I'm researching"]}
+];
+let i=0,answers=[];
+function render(){
+ const q=questions[i];
+ document.getElementById("bar").style.width=((i+1)/questions.length*100)+"%";
+ document.getElementById("question").innerHTML=`<div class="q">${q.q}</div><div class="choices">${q.a.map((x,n)=>`<button class="choice" onclick="pick(${n})">${x}</button>`).join("")}</div>`;
+}
+function pick(n){answers.push(questions[i].a[n]);i++;if(i<questions.length)render();else showResults();}
+function showResults(){
+ document.getElementById("bar").style.width="100%";
+ let online=answers[2]==="Online only"||answers[2]==="Mostly online";
+ let fast=answers[4]==="Today"||answers[4]==="This week";
+ let matches=[];
+ if(online)matches.push(["Freelancing","Sell a skill online through freelance marketplaces or direct outreach.","Low startup cost"]);
+ if(fast)matches.push(["Remote gig work","Look for short-turnaround remote tasks, support, sales, or service work.","Start quickly"]);
+ matches.push(["Digital services","Offer a simple service businesses already buy—editing, admin, design, lead research, or social media support.","Skill-based"]);
+ matches.push(["Affiliate/content business","Build useful content around a niche and monetize through legitimate affiliate programs.","Longer-term"]);
+ let html=`<h2>Your starter matches</h2><p class="note">These are starting categories—not promises of earnings.</p>`;
+ matches.slice(0,4).forEach(m=>html+=`<div class="match"><b>${m[0]}</b>${m[1]}<br><span class="pill">${m[2]}</span></div>`);
+ html+=`<a class="cta" href="#pricing">Unlock More Matches →</a>`;
+ document.getElementById("question").innerHTML="";document.getElementById("result").classList.remove("hidden");document.getElementById("result").innerHTML=html;
+}
+render();
+</script>
+</body>
+</html>
